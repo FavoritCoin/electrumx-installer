@@ -169,7 +169,7 @@ if [ $UPDATE_ONLY == 0 ] || [ $UPDATE_PYTHON == 1 ]; then
 	if [[ $($python -V 2>&1) == *"Python 3.6"* ]] > /dev/null 2>&1 && [ $UPDATE_PYTHON == 0 ]; then
 		_info "Python 3.6 is already installed."
 	elif [[ $($python -V 2>&1) == *"Python 3.11"* ]] > /dev/null 2>&1; then
-		_info "Python 3.7 is already installed."
+		_info "Python 3.11 is already installed."
 	else
 		_status "Installing Python 3.11"
 		python=python3.11
