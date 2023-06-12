@@ -57,7 +57,7 @@ HELP
 	    --update)
 	    UPDATE_ONLY=1
 	    ;;
-		--update-python)
+		--update-python3)
 	    UPDATE_PYTHON=1
 	    ;;
 	    --leveldb)
@@ -149,7 +149,7 @@ fi
 
 python=""
 
-for _python in python3 python3.7; do
+for _python in python3 python3.11; do
 	if which $_python; then
 	python=$_python
 	fi
@@ -172,10 +172,10 @@ if [ $UPDATE_ONLY == 0 ] || [ $UPDATE_PYTHON == 1 ]; then
 		_info "Python 3.7 is already installed."
 	else
 		_status "Installing Python 3.11"
-		python=python3.7
+		python=python3.11
 		install_python37
 		if [[ $($python -V 2>&1) == *"Python 3.11"* ]] > /dev/null 2>&1; then
-			_info "Python 3.7 successfully installed"
+			_info "Python 3.11 successfully installed"
 		else
 			_error "Unable to install Python 3.11" 4
 		fi
